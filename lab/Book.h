@@ -12,6 +12,7 @@ private:
 	int PublishYear;
 	int NumberOfPages{};
 	list<string> Genres;
+	list<string> Ñharacters;
 	string Description;
 
 public:

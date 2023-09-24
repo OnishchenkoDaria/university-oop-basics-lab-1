@@ -8,5 +8,8 @@ void Book::getInfo() {
 	for (string genres : Genres) {
 		cout << genres << endl;
 	}
+	for (string characters : Ñharacters) {
+		cout << characters << endl;
+	}
 	cout << "Description: " << Description;
 }
