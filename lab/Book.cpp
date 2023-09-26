@@ -1,6 +1,6 @@
 #include "Book.h"
 
-void Book::getInfo() {
+/*void Book::getInfo() {
 	cout << "Tittle: " << Name << endl;
 	cout << "Author: " << Author << endl;
 	cout << "Year of Publishing: " << PublishYear << endl;
@@ -12,4 +12,4 @@ void Book::getInfo() {
 		cout << characters << endl;
 	}
 	cout << "Description: " << Description;
-}
+}*/

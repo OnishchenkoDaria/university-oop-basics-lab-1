@@ -1,5 +1,5 @@
 #include "Character.h"
-
+/*
 void Character::getInform() {
 	for (string names : Names)
 		cout << "Character's Names: " << names << " ";
@@ -13,4 +13,4 @@ void Character::getInform() {
 
 void Character::addNames(string name){
 	Names.push_back(name);
-}
+}*/

@@ -3,7 +3,7 @@
 #include <string>
 #pragma once
 using namespace std;
-
+/*
 struct status {
 	string book;
 	string characterType;
@@ -22,5 +22,5 @@ public:
 
 	void getInform();
 	void addNames(string name);
-};
+};*/
 

@@ -1,22 +1,18 @@
 #include <iostream>
 #include <list>
 #include <string>
+#include "Basic.h"
 #pragma once
+/*
 using namespace std;
 
-class BookSeries
+class BookSeries : public Basic
 {
 private:
-	string Name;
-	int Year;
 	list<string>Books;
 	list<string>Authors;
 public:
-	BookSeries(string name, int year) {
-		Name = name;
-		Year = year;
-	}
-	void getInfo();
-	void BookSelect();
+	BookSeries(string name, int year) : Basic(name, year) {	}
 };
 
+*/
