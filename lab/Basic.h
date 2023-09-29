@@ -6,17 +6,25 @@ using namespace std;
 
 class Basic abstract
 {
-private:
+protected:
+	int Id{};
 	string Name;
-	int YearOrAge;
-
-public:
+	int YearOrAge{};
 	
-	Basic(string name, int num) {
-		Name = name;
-		YearOrAge = num;
-	}
+public:
 
 	virtual void getInfo();
+
+	virtual void getName();
+
+	string returnName();
+
+	int returnYear();
+
+	virtual void getYear();
+
+	void setYear(int num);
+
+
 };
 

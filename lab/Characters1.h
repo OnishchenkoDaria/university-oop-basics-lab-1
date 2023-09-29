@@ -7,17 +7,17 @@ struct status {
 };
 
 class Characters1 :
-    public Basic
+	public Basic
 {
 private:
-	int Age;
+	int Age{};
 	list<string> Names;
 	list<status> Status;
 
 public:
-	Characters1(int num) :Basic(NULL, num) {
-
+	Characters1(int num){
+		Age = num;
 	}
-	void getInfo();
+	void getInfo() override;
 };
 

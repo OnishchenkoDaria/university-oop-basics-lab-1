@@ -127,20 +127,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Algorythm.cpp" />
     <ClCompile Include="Basic.cpp" />
     <ClCompile Include="Book1.cpp" />
+    <ClCompile Include="BookList.cpp" />
     <ClCompile Include="BookSeries.cpp" />
     <ClCompile Include="BookSeries1.cpp" />
-    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="CharacterList.cpp" />
     <ClCompile Include="Characters1.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="SeriesList.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorythm.h" />
     <ClInclude Include="Basic.h" />
     <ClInclude Include="Book1.h" />
+    <ClInclude Include="BookList.h" />
     <ClInclude Include="BookSeries1.h" />
-    <ClInclude Include="Character.h" />
+    <ClInclude Include="CharacterList.h" />
     <ClInclude Include="Characters1.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="SeriesList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,7 +2,7 @@
 
 void Characters1::getInfo()
 {
-	Basic::getInfo();
+	//Basic::getInfo();
 
 	cout << "Age: " << Age << endl;
 

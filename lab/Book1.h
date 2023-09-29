@@ -4,15 +4,31 @@ class Book1 :
     public Basic
 {
 private:
+    //string Name;
+   // int Year;
     string Author;
-    int Pages;
+    int Pages{};
     string Annotation;
 public:
-    Book1(string name, int num, string author, int pages, string descr) : Basic(name, num) {
-        Author = author;
-        Pages = pages;
-        Annotation = descr;
-    }
+    
     void getInfo();
+
+    void getName();
+
+    void userCreateObj();
+
+    string returnName();
+
+    int returnId();
+
+    void setId(int num);
+
+    void setName();
+    void setYear();
+    void setAuthor();
+    void setPages();
+    void setDescr();
+
+    void EditItem();
 };
 
