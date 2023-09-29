@@ -48,6 +48,9 @@
     <ClCompile Include="Algorythm.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="AuthorList.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Basic.h">
@@ -75,6 +78,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Algorythm.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthorList.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

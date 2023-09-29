@@ -1,8 +1,8 @@
 #pragma once
 #include "Node.h"
 #include "Book1.h"
-class BookList :
-    public Node
+class BookList //:
+    //public Node
 {
 private: 
     Book1 Book;

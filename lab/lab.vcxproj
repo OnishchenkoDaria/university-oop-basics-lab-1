@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Algorythm.cpp" />
+    <ClCompile Include="AuthorList.cpp" />
     <ClCompile Include="Basic.cpp" />
     <ClCompile Include="Book1.cpp" />
     <ClCompile Include="BookList.cpp" />
@@ -141,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorythm.h" />
+    <ClInclude Include="AuthorList.h" />
     <ClInclude Include="Basic.h" />
     <ClInclude Include="Book1.h" />
     <ClInclude Include="BookList.h" />

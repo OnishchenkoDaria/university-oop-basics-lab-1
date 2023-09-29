@@ -2,38 +2,13 @@
 #include <list>
 #include "Basic.h"
 #include "Book1.h"
-#include "Character.h"
-#include "BookSeries.h"
 #include "Node.h"
 #include "BookList.h"
 #include "CharacterList.h"
 #include "SeriesList.h"
-#include "Database.h"
 #include "Algorythm.h"
 
 using namespace std;
-
-BookList* InsertionSort(BookList* head) {
-	BookList* start = new BookList();
-	start->Next = head;
-	BookList* current = head, * prev = start;
-	while (current) {
-		if (current->Next and (current->Next->Book.returnYear() < current->Book.returnYear())) {
-			while (prev->Next and (prev->Next->Book.returnYear() < current->Book.returnYear())) {
-				prev = prev->Next;
-			}
-			BookList* temp = prev->Next;
-			prev->Next = current->Next;
-			current->Next = current->Next->Next;
-			prev->Next->Next = temp;
-			prev = start;
-
-		}
-		else
-			current = current->Next;
-	}
-	return start->Next;
-}
 
 Book1 createVar() {
 	Book1 book;
@@ -48,12 +23,13 @@ Book1 searchItem(BookList bookList, BookList* head, bool* index) {
 	return bookList.Search(head, name, index);
 }
 
+
 int main()
 {	
-	BookList bookList(nullptr);
+	BookList bookList(nullptr), authorList(nullptr);
 	BookList* head = NULL, * tail = NULL;
-	
-	char userInput; 
+	BookList* head1 = NULL, * tail1 = NULL;
+	char userInput, decision; 
 	int* counter = 0;
 	bool index;
 	Book1 service;
@@ -71,30 +47,82 @@ int main()
 		cin >> userInput;
 		switch (userInput) {
 		case 'A':
-			bookList.AddItem(createVar(), &head, &tail);
+			cin >> decision;
+			switch (decision) {
+			case'b':
+				bookList.AddItem(createVar(), &head, &tail);
+				break;
+			case'a':
+				authorList.AddItem(createVar(), &head1, &tail1);
+				break;
+			}
 			break;
 		case 'P':
-			bookList.Show(head);
+			cin >> decision;
+			switch (decision) {
+			case'b':
+				bookList.Show(head);
+				break;
+			case'a':
+				authorList.Show(head1);
+				break;
+			}
 			break;
 		case 'S':
-			index = false;
-			service = searchItem(bookList, head, &index);
-			if (index == true)
-				service.getInfo();
-			else
-				cout << "Such an Item does not exist. ypu can add it by pressing 'A'" << endl;
+			cin >> decision;
+			switch (decision) {
+			case'b':
+				index = false;
+				service = searchItem(bookList, head, &index);
+				if (index == true)
+					service.getInfo();
+				else
+					cout << "Such an Item does not exist. ypu can add it by pressing 'A'" << endl;
+				break;
+			case'a':
+				index = false;
+				service = searchItem(authorList, head1, &index);
+				if (index == true)
+					service.getInfo();
+				else
+					cout << "Such an Item does not exist. ypu can add it by pressing 'A'" << endl;
+				break;
+			}
 			break;
+			
 		case 'D':
-			id = searchItem(bookList, head, &index).returnId();
-			cout << id;
-			bookList.DeleteSelected(&head, id);
-			bookList.FixingId(&head);
+			cin >> decision;
+			switch (decision) {
+			case'b':
+				bookList.DeleteSelected(&head, searchItem(bookList, head, &index).returnId());
+				bookList.FixingId(&head);
+				break;
+			case'a':
+				authorList.DeleteSelected(&head1, searchItem(authorList, head1, &index).returnId());
+				break;
+			}			
 			break;
 		case 'E':
-			bookList.FindAndEdit(&head);
+			cin >> decision;
+			switch (decision) {
+			case'b':
+				bookList.FindAndEdit(&head);
+				break;
+			case'a':
+				authorList.FindAndEdit(&head1);
+				break;
+			}
 			break;
 		case 'M':
-			InsertionSort(head);
+			cin >> decision;
+			switch (decision) {
+			case'b':
+				//
+				break;
+			case'a':
+				//
+				break;
+			}
 			break;
 		}
 	}
