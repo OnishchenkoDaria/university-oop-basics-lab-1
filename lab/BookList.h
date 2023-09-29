@@ -4,7 +4,7 @@
 class BookList :
     public Node
 {
-public: 
+private: 
     Book1 Book;
     int Id{};
     BookList* Next;
