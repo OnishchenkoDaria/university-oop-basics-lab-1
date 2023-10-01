@@ -11,17 +11,19 @@ private:
     string Annotation;
 public:
     
-    void getInfo();
+    //void getInfo();
 
-    void getName();
+ //   void getName();
 
     void userCreateObj();
 
-    string returnName();
+ //   string returnName();
 
     int returnId();
 
     void setId(int num);
+
+    void setBookYear(int num);
 
     void setName();
     void setYear();

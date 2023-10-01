@@ -18,9 +18,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="BookSeries.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Basic.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -30,16 +27,10 @@
     <ClCompile Include="BookSeries1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Characters1.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Node.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="BookList.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterList.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="SeriesList.cpp">
@@ -49,6 +40,15 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="AuthorList.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Author.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="CharactersList1.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Character1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,16 +62,10 @@
     <ClInclude Include="BookSeries1.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Characters1.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Node.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="BookList.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CharacterList.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="SeriesList.h">
@@ -81,6 +75,15 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="AuthorList.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Author.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CharactersList1.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Character1.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

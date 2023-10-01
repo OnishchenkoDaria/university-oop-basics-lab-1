@@ -1,7 +1,27 @@
 #include "AuthorList.h"
+
 /*
+void Author::userCreateObj() {
+	setName();
+	setYear();
+}
+
+void AuthorList::setName() {
+	string name;
+	cout << "	Insert the Name: " << endl;
+	cin >> name;
+	this->Name = name;
+}
+
+void AuthorList::setYear() {
+	int year;
+	cout << "	Insert the Year: " << endl;
+	cin >> year;
+	this->Age = year;
+}
+
 void AuthorList::AddItem(Book1 book, BookList** head, BookList** tail) {
-	BookList::AddItem;
+
 }
 
 void AuthorList::Show(BookList* head) {

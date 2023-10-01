@@ -3,6 +3,7 @@
 #include "Characters1.h"
 class CharacterList :
     public Node
+
 {
     Characters1 Character;
     CharacterList* Next, * Prev;
@@ -13,7 +14,6 @@ public:
 
     CharacterList* head = NULL;
     CharacterList* tail = NULL;
-
 
 };
 

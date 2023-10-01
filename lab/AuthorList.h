@@ -1,15 +1,26 @@
 #pragma once
 #include "BookList.h"
+#include "Author.h"
 class AuthorList :
     public BookList
 {
 private:
-    string Name;
-    int Age;
+    Author author;
+    AuthorList* Next;
 
 public:
-    /*void AddItem(Book1 book, BookList** head, BookList** tail);
 
+    AuthorList(AuthorList* next = nullptr) {
+        Next = next;
+    }
+
+   // void userCreateObj();
+
+   /* void setName();
+
+    void setYear();
+    void AddItem(Book1 book, BookList** head, BookList** tail);
+    
     void Show(BookList* head);
 
     //void ShowHead(BookList* head);

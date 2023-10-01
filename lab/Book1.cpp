@@ -1,5 +1,5 @@
 #include "Book1.h"
-
+/*
 void Book1:: getInfo()
 {
 	//динамічний поліморфізм 
@@ -16,7 +16,7 @@ void Book1::getName(){
 
 string Book1::returnName() {
 	return Name;
-}
+}*/
 
 int Book1::returnId() {
 	return Id;
@@ -24,6 +24,10 @@ int Book1::returnId() {
 
 void Book1::setId(int num) {
 	this->Id = num;
+}
+
+void Book1::setBookYear(int num) {
+	this->YearOrAge = num;
 }
 
 void Book1::setName() {

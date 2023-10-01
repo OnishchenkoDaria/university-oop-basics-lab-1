@@ -31,6 +31,40 @@ public:
     void FindAndEdit(BookList**head);
 
     void FixingId(BookList** head);
+
+    void InsertionSort(BookList** head);
+
+    void FindHalf(BookList* head, BookList** Part1, BookList** Part2);
+
+    void MergeSort(BookList** head);
+
+  //  void QuickSort(BookList** Realhead, BookList** tail);
+
+    BookList* SortedResult(BookList* Part1, BookList* Part2);
+
+    //BookList* findPivot(BookList* head, BookList* tail);
+
+  //  void QuickSort(BookList* head, BookList* tail);
+    void solveSort(BookList** Realhead, BookList** Realtail);
+
+    BookList* devide(BookList* head, BookList* tail);
+   
+    void Swap(BookList* prev, BookList* temp);
+
+   // void CountingSort(BookList* head);
+
+    void BucketSort(BookList** head);
+
+    BookList* BubbleSort(BookList* head);
+
+    int findMin(BookList* head);
+
+    int findMax(BookList* head);
+
+    BookList* CountingSort(BookList* head);
+
+    int FindLength(BookList* head);
+    // void QuickSortSummon(BookList** head, BookList *tail);
 };
 
 

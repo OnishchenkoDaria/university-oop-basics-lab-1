@@ -4,16 +4,22 @@
 #include "Book1.h"
 #include "Node.h"
 #include "BookList.h"
-#include "CharacterList.h"
 #include "SeriesList.h"
 #include "Algorythm.h"
+#include "AuthorList.h"
 
 using namespace std;
 
-Book1 createVar() {
+Book1 createVarB() {
 	Book1 book;
 	book.userCreateObj();
 	return book;
+}
+
+Author createVarA() {
+	Author author;
+	author.userCreateObj();
+	return author;
 }
 
 Book1 searchItem(BookList bookList, BookList* head, bool* index) {
@@ -23,41 +29,45 @@ Book1 searchItem(BookList bookList, BookList* head, bool* index) {
 	return bookList.Search(head, name, index);
 }
 
-
 int main()
 {	
-	BookList bookList(nullptr), authorList(nullptr);
+	BookList bookList(nullptr);
+	AuthorList authorList(nullptr);
 	BookList* head = NULL, * tail = NULL;
 	BookList* head1 = NULL, * tail1 = NULL;
-	char userInput, decision; 
-	int* counter = 0;
+	char decision; 
+	//int* counter = 0;
 	bool index;
 	Book1 service;
-	int id;
 	BookList* InsertionSortList();
+
 
 	while (true) {
 		cout << "Choose an option: " << endl;
 		cout << "	>press <A> to Add an item" << endl;
-		cout << "	>press <S> to Search an item" << endl;
+		cout << "	>press <F> to Find an item" << endl;
 		cout << "	>press <D> to delete an item" << endl;
 		cout << "	>press <P> to print a list" << endl;
 		cout << "	>press <E> to edit an item" << endl;
-		cout << "	>press <M> to sort a list" << endl;
-		cin >> userInput;
-		switch (userInput) {
+		cout << "	>press <S> to sort a list" << endl;
+		cin >> decision;
+		switch (decision) {
 		case 'A':
+			cout << "	>press <b> to work with Book List" << endl;
+			cout << "	>press <a> to work with Book List" << endl;
 			cin >> decision;
 			switch (decision) {
 			case'b':
-				bookList.AddItem(createVar(), &head, &tail);
+				bookList.AddItem(createVarB(), &head, &tail);
 				break;
 			case'a':
-				authorList.AddItem(createVar(), &head1, &tail1);
+				authorList.AddItem(createVarA(), &head1, &tail1);
 				break;
 			}
 			break;
 		case 'P':
+			cout << "	>press <b> to work with Book List" << endl;
+			cout << "	>press <a> to work with Book List" << endl;
 			cin >> decision;
 			switch (decision) {
 			case'b':
@@ -68,7 +78,9 @@ int main()
 				break;
 			}
 			break;
-		case 'S':
+		case 'F':
+			cout << "	>press <b> to work with Book List" << endl;
+			cout << "	>press <a> to work with Book List" << endl;
 			cin >> decision;
 			switch (decision) {
 			case'b':
@@ -91,6 +103,8 @@ int main()
 			break;
 			
 		case 'D':
+			cout << "	>press <b> to work with Book List" << endl;
+			cout << "	>press <a> to work with Book List" << endl;
 			cin >> decision;
 			switch (decision) {
 			case'b':
@@ -103,6 +117,8 @@ int main()
 			}			
 			break;
 		case 'E':
+			cout << "	>press <b> to work with Book List" << endl;
+			cout << "	>press <a> to work with Book List" << endl;
 			cin >> decision;
 			switch (decision) {
 			case'b':
@@ -113,17 +129,72 @@ int main()
 				break;
 			}
 			break;
-		case 'M':
+		case 'S':
+			cout << "	>press <b> to work with Book List" << endl;
+			cout << "	>press <a> to work with Book List" << endl;
 			cin >> decision;
 			switch (decision) {
 			case'b':
-				//
+				cout << "		>press <I> to use Insert Sort" << endl;
+				cout << "		>press <M> to use Merge Sort" << endl;
+				cout << "		>press <Q> to use Quick Sort" << endl;
+				cout << "		>press <C> to use Counting Sort" << endl;
+				cout << "		>press <B> to use Bubble Sort" << endl;
+				cin >> decision;
+				switch (decision) {
+				case'I':
+					bookList.InsertionSort(&head);
+					bookList.FixingId(&head);
+					break;
+				case'M':
+					bookList.MergeSort(&head);
+					bookList.FixingId(&head);
+					break;
+				case'Q':
+					bookList.solveSort(&head, &tail);
+					bookList.FixingId(&head);
+					break;
+				case'B':
+					bookList.BubbleSort(head);
+					bookList.FixingId(&head);
+					break;
+				case'C':
+					bookList.CountingSort(head);
+					bookList.FixingId(&head);
+					break;
+				}
 				break;
 			case'a':
-				//
+				cout << "		>press <I> to use Insert Sort" << endl;
+				cout << "		>press <M> to use Merge Sort" << endl;
+				cout << "		>press <Q> to use Quick Sort" << endl;
+				cout << "		>press <C> to use Counting Sort" << endl;
+				cout << "		>press <B> to use Bubble Sort" << endl;
+				cin >> decision;
+				switch (decision) {
+				case'I':
+					authorList.InsertionSort(&head1);
+					authorList.FixingId(&head1);
+					break;
+				case'M':
+					authorList.MergeSort(&head1);
+					authorList.FixingId(&head1);
+					break;
+				case'Q':
+					authorList.solveSort(&head1, &tail1);
+					authorList.FixingId(&head1);
+					break;
+				case'B':
+					authorList.BubbleSort(head1);
+					authorList.FixingId(&head1);
+					break;
+				case'C':
+					authorList.CountingSort(head1);
+					authorList.FixingId(&head1);
+					break;
+				}
 				break;
 			}
-			break;
 		}
 	}
 }
