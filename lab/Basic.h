@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include <sstream>
 using namespace std;
 #pragma once
 
@@ -25,6 +26,6 @@ public:
 
 	void setYear(int num);
 
-
+	void setName(string name);
 };
 

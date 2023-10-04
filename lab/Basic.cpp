@@ -24,3 +24,8 @@ void Basic::getYear() {
 void Basic::setYear(int num) {
 	this->YearOrAge = num ;
 }
+
+void Basic::setName(string Name) {
+	string name; cin >> name;
+	this->Name = name;
+}

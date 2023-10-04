@@ -1,9 +1,9 @@
 #include "SeriesList.h"
 #include "CharactersList1.h"
 
-void SeriesList::AddSeries(string name, SeriesList** head, SeriesList** tail) {
+/*void SeriesList::AddSeries(string name, SeriesList** head, SeriesList** tail) {
 	SeriesList* temp = new SeriesList;
-	temp->Name = name;
+	temp->Series. = name;
 
 	if (!(*head)) {
 		*head = *tail = temp;
@@ -14,4 +14,4 @@ void SeriesList::AddSeries(string name, SeriesList** head, SeriesList** tail) {
 		*tail = temp;
 	}
 	temp->Next = NULL;
-}
+}*/

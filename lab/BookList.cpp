@@ -1,4 +1,5 @@
 #include "BookList.h"
+#include <vector>
 
 void BookList::AddItem(Book1 book, BookList** head, BookList **tail) {
 	BookList* temp = new BookList;
@@ -91,14 +92,16 @@ void BookList::DeleteSelected(BookList** head, int position) {
 	}
 }
 
-void BookList::FixingId(BookList**head){
+void BookList::FixingId(BookList** head) {
 	BookList* temp, * prev;
 	temp = *head;
 	prev = *head;
 	while (temp) {
 		if ((*head)->Book.returnId() != 1) {
+			int counter = 1;
 			while (temp) {
-				temp->Book.setId(temp->Book.returnId() - 1);
+				temp->Book.setId(counter);
+				counter++;
 				temp = temp->Next;
 			}
 		}
@@ -109,11 +112,7 @@ void BookList::FixingId(BookList**head){
 			temp = temp->Next;
 			while (temp) {
 				if (temp->Book.returnId() - prev->Book.returnId() != 1) {
-					temp->Book.setId(temp->Book.returnId() - 1);
-					prev = temp;
-					if (prev == NULL)
-						break;
-					temp = temp->Next;
+					temp->Book.setId(prev->Book.returnId() + 1);
 				}
 			}
 		}
@@ -146,12 +145,12 @@ void BookList::InsertionSort(BookList** head) {
 		
 		prev->Book.getName(); cout << " "; temp->Book.getName(); cout << endl;
 		if (prev->Book.returnYear() <= temp->Book.returnYear()) {
-			cout << "if 1" << endl;
+			//cout << "if 1" << endl; ----- test
 			prev = temp;
 			temp = temp->Next;
 		}
 		else {
-			cout << "if 2";
+			//cout << "if 2"; ----- test
 			prev->Book.getName(); cout << " "; temp->Book.getName(); cout << endl;
 						
 			if (temp->Book.returnYear() <= (*head)->Book.returnYear()) {
@@ -163,7 +162,7 @@ void BookList::InsertionSort(BookList** head) {
 				BookList* serv = *head;
 				while (temp->Book.returnYear() >= serv->Book.returnYear())
 				{
-					cout << "cycle";
+					//cout << "cycle"; ---- test
 					serv = serv->Next;
 				}
 				prev->Next = temp->Next;
@@ -244,22 +243,14 @@ BookList* BookList::devide(BookList* head, BookList* tail) {
 		if (pivot->Book.returnYear() > curr->Book.returnYear()) {
 			
 			//swap(prev->Next->Book.returnYear(), curr->Book.returnYear());
-			/*BookList* temp = new BookList;
-			temp->Book.setBookYear(prev->Next->Book.returnYear());
-			prev->Book.setBookYear(curr->Book.returnYear()); 
-			curr->Book.setBookYear(temp->Book.returnYear());
-			free(temp);*/
+			
 			Swap(prev->Next, curr);
 			prev = prev->Next;
 		}
 		curr = curr->Next;
 	}
 	//swap(prev->Book.returnYear(), pivot->Book.returnYear());
-	/*BookList* temp = new BookList;
-	temp->Book.setBookYear(prev->Book.returnYear());
-	prev->Book.setBookYear(pivot->Book.returnYear());
-	pivot->Book.setBookYear(temp->Book.returnYear());
-	free(temp);*/
+	
 	Swap(prev,pivot);
 	
 	return prev;
@@ -406,91 +397,72 @@ BookList* BookList::FindMin(BookList* head) {
 	
 }*/
 
-int BookList::findMin(BookList* head) {
-	if (!head)
-		return NULL;
-	BookList* curr = head;
-	int min = curr->Book.returnYear();
-	while (curr) {
-		if (min > curr->Book.returnYear())
-			min = curr->Book.returnYear();
-		curr = curr->Next;
+void BookList::CountingSort(BookList** head) {
+	if (!*head || !(*head)->Next) {
+		return; // Nothing to sort for an empty list or a list with one element
 	}
-	return min;
-}
 
-int BookList::findMax(BookList* head) {
-	if (!head)
-		return NULL;
-	BookList* curr = head;
-	int max = curr->Book.returnYear();
-	while (curr) {
-		if (max < curr->Book.returnYear())
-			max = curr->Book.returnYear();
-		curr = curr->Next;
+	// Check if the list is already sorted
+	bool isSorted = true;
+	BookList* current = *head;
+
+	while (current->Next) {
+		if (current->Book.returnYear() > current->Next->Book.returnYear()) {
+			isSorted = false;
+			break;
+		}
+		current = current->Next;
 	}
-	return max;
-}
-
-
-BookList* BookList::CountingSort(BookList* head) {
-	if (!head or !head->Next) 
-		return head;
 	
-	int minYear = findMin(head);
-	int maxYear = findMax(head);
-
-	int range = maxYear - minYear + 1;
-	vector<int> countArray(range, 0);
-
-	BookList* curr = head;
-	while (curr) {
-		countArray[curr->Book.returnYear() - minYear]++;
-		curr = curr->Next;
+	if (isSorted == true) {
+		//cout << "true";
+		return; // The list is already sorted, no need for further processing
 	}
+	else {
+		BookList* temp = *head;
+		int size = FindLength(*head);
+		int max = 0;
 
-	curr = head;
-	int i = 0;
-	while (curr) {
-		if (countArray[i] == 0)
-			i++;
-		else {
-			curr->Book.setBookYear(minYear + i);
-			countArray[i]--;
-			curr = curr->Next;
+		// Find the maximum publication year
+		while (temp) {
+			if (max < temp->Book.returnYear()) {
+				max = temp->Book.returnYear();
+			}
+			temp = temp->Next;
 		}
-	}
 
-	return head; /*// Return the sorted list
+		vector<int> countArr(max + 1, 0);
 
-	BookList* min = new BookList(); min->Book.setBookYear(findMin(head));
-	BookList* max = new BookList(); max->Book.setBookYear(findMin(head));
-
-	int range = max->Book.returnYear() - min->Book.returnYear() + 1;
-	// Create a counting array to store the count of each value
-	vector<int> countArray(range, 0);
-
-	BookList* curr = head;
-	while (curr) {
-		countArray[curr->Book.returnYear() - min->Book.returnYear()]++;
-		curr = curr->Next;
-	}
-
-	curr = head;
-	int i = 0;
-	while (curr) {
-		if (countArray[i] == 0)
-			i++;
-		else {
-			curr->Book.setBookYear(min->Book.returnYear() + i);
-			countArray[i]--;
-			curr = curr->Next;
+		temp = *head;
+		while (temp) {
+			countArr[temp->Book.returnYear()]++;
+			temp = temp->Next;
 		}
-	}
-	delete min;
-	delete max;
 
-	return head;*/
+		for (int i = 1; i <= max; i++) {
+			countArr[i] += countArr[i - 1];
+		}
+
+		vector<BookList*> outputArr(size, nullptr);
+
+		temp = *head;
+		while (temp) {
+			outputArr[countArr[temp->Book.returnYear()] - 1] = temp;
+			countArr[temp->Book.returnYear()]--;
+			temp = temp->Next;
+		}
+
+		// Reconstruct the sorted list
+		*head = outputArr[0];
+		temp = *head;
+
+		for (int i = 1; i < size; i++) {
+			temp->Next = outputArr[i];
+			temp = temp->Next;
+		}
+
+		temp->Next = nullptr;
+	}
 }
 
 int BookList::FindLength(BookList* head) {

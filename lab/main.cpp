@@ -159,7 +159,7 @@ int main()
 					bookList.FixingId(&head);
 					break;
 				case'C':
-					bookList.CountingSort(head);
+					bookList.CountingSort(&head);
 					bookList.FixingId(&head);
 					break;
 				}
@@ -189,7 +189,8 @@ int main()
 					authorList.FixingId(&head1);
 					break;
 				case'C':
-					authorList.CountingSort(head1);
+
+					authorList.CountingSort(&head1);
 					authorList.FixingId(&head1);
 					break;
 				}

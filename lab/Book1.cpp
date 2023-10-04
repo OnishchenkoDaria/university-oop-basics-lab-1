@@ -1,4 +1,5 @@
 #include "Book1.h"
+
 /*
 void Book1:: getInfo()
 {
@@ -17,6 +18,20 @@ void Book1::getName(){
 string Book1::returnName() {
 	return Name;
 }*/
+
+bool num_check(string input) {
+	for (int i = 0; i < input.length(); i++) {
+		if (isdigit(input[i]) == false) {
+			//cout << "not digit"<<endl;
+			return false;
+		}
+		else {
+			//cout<<"success"<<endl;
+			return true;
+		}
+
+	}
+}
 
 int Book1::returnId() {
 	return Id;
@@ -37,23 +52,48 @@ void Book1::setName() {
 	this->Name = name;
 }
 void Book1::setYear() {
+	string num_value;
+	stringstream ss;
 	int year;
+
 	cout << "	Insert the Year: " << endl;
-	cin >> year;
+	cin >> num_value;
+
+	while (num_check(num_value) == false) {
+		cout << "ONLY NUMBERS please" << endl;
+		cin >> num_value;
+	}
+	ss << num_value;
+	ss >> year;
+
 	this->YearOrAge = year;
 }
+
 void Book1::setAuthor() {
 	string author;
 	cout << "	Insert the Author: " << endl;
 	cin >> author;
 	this->Author = author;
 }
+
 void Book1::setPages() {
+	string num_value;
+	stringstream ss;
 	int pages;
+
 	cout << "	Insert the Number of Pages: " << endl;
-	cin >> pages;
+	cin >> num_value;
+
+	while (num_check(num_value) == false) {
+		cout << "ONLY NUMBERS please" << endl;
+		cin >> num_value;
+	}
+	ss << num_value;
+	ss >> pages;
+		
 	this->Pages = pages;
 }
+
 void Book1::setDescr() {
 	string descr;
 	cout << "	Insert the Annotation: " << endl;

@@ -10,10 +10,8 @@ private:
 
 public:
 
-    CharactersList1(CharactersList1* next = nullptr) {
-        Next = next;
-    }
-    
+    CharactersList1* head = NULL;
+
     void AddCharacter(Character1 person, CharactersList1** head, CharactersList1** tail);
 };
 

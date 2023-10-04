@@ -61,7 +61,7 @@ public:
 
     int findMax(BookList* head);
 
-    BookList* CountingSort(BookList* head);
+    void CountingSort(BookList** head);
 
     int FindLength(BookList* head);
     // void QuickSortSummon(BookList** head, BookList *tail);
