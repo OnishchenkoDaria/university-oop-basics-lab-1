@@ -24,19 +24,10 @@
     <ClCompile Include="Book1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="BookSeries1.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Node.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="BookList.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="SeriesList.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Algorythm.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="AuthorList.cpp">
@@ -45,10 +36,10 @@
     <ClCompile Include="Author.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CharactersList1.cpp">
+    <ClCompile Include="Character1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Character1.cpp">
+    <ClCompile Include="BookSeries10.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,19 +50,10 @@
     <ClInclude Include="Book1.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="BookSeries1.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Node.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="BookList.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="SeriesList.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Algorythm.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="AuthorList.h">
@@ -80,10 +62,10 @@
     <ClInclude Include="Author.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CharactersList1.h">
+    <ClInclude Include="Character1.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Character1.h">
+    <ClInclude Include="BookSeries10.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

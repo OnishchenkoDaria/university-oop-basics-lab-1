@@ -4,6 +4,17 @@
 #include "SeriesList.h"
 #include <vector>
 #include <list>
+#include "BookSeries10.h"
+
+struct status{
+
+	//change into a bookList???????????
+	Book1 Book;
+	string matter;
+	status* Next;	
+};
+
+class BookSeries10;
 
 class Character1 :
 	public Book1
@@ -12,15 +23,19 @@ private:
 	int Id;
 	int Age{};
 	list<string> Names;
-	BookList* Books;
+	//status 
+	//Character1* Next;
 	
-	Character1(int id, int age, BookList *head = NULL) {
-		Id = id;
-		Age = age;
-		Books = head;
-	}
 
 public:
+
+	//тут підуть нові функції:
+	void create(string name, int age, string CHmatter, BookSeries10* Head);
+	
+	void AddBook(status* head, string CHmatter, BookSeries10* Head);
+
+	void Check(status** head, BookSeries10* Head);
+    //закінчилось
 
 	int returnId();
 
@@ -31,8 +46,6 @@ public:
 	void setNameList();
 
 	void setStatusList();
-
-	Book1 returnBook();
 
 };
 

@@ -38,20 +38,13 @@ public:
 
     void MergeSort(BookList** head);
 
-  //  void QuickSort(BookList** Realhead, BookList** tail);
-
     BookList* SortedResult(BookList* Part1, BookList* Part2);
 
-    //BookList* findPivot(BookList* head, BookList* tail);
-
-  //  void QuickSort(BookList* head, BookList* tail);
     void solveSort(BookList** Realhead, BookList** Realtail);
 
     BookList* devide(BookList* head, BookList* tail);
    
     void Swap(BookList* prev, BookList* temp);
-
-   // void CountingSort(BookList* head);
 
     void BucketSort(BookList** head);
 
@@ -64,7 +57,8 @@ public:
     void CountingSort(BookList** head);
 
     int FindLength(BookList* head);
-    // void QuickSortSummon(BookList** head, BookList *tail);
+
+    bool BoolFind(BookList* head, Book1 book);
 };
 
 

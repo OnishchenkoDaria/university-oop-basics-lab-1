@@ -39,7 +39,6 @@ void BookList::Show(BookList* head) {
 	cout << endl;
 }
 
-
 //протидія попередженню C4715
 __declspec(noreturn) extern void fatal() {}
 
@@ -283,119 +282,8 @@ void BookList::solveSort(BookList**Realhead, BookList** Realtail)
 
 	solveSort(Realhead, &pivot); // Sort the left partition
 	solveSort(&pivot->Next, Realtail); // Sort the right partition
-	/*
-	if (head == NULL || head == tail || tail == NULL || head->Next == tail) {
-		return;
-	}
-
-	BookList* pivot = devide(head, tail);
-	//cout << "pivot: ";  pivot->Book.getName();cout << endl;
-	solveSort(head, pivot);
-	solveSort(pivot->Next, tail);*/
-}
-
-/*
-void BookList::CountingSort(BookList** head) {
-	if (*head == NULL or (*head)->Next == NULL)
-		return;
-	BookList* temp = *head;
-	int maxNum = temp->Book.returnYear();
-	int minNum = temp->Book.returnYear();
-		
-	while (temp) {
-		if (maxNum < temp->Book.returnYear())
-			maxNum = temp->Book.returnYear();
-		
-		if (minNum > temp->Book.returnYear())
-			minNum = temp->Book.returnYear();
-		
-		temp = temp->Next;
-	}
-	int range = maxNum - minNum + 1;
-	int* countArray = new int[range] {0};
-
-	//base array
-	temp = *head;
-	while (temp) {
-		countArray[temp->Book.returnYear()]++;
-		temp = temp->Next;
-	}
 	
-	for (int i = 1; i <= range; i++){
-		countArray[i] =+ countArray[i - 1];
-	}
-	BookList* sortedList = NULL;
-	temp = *head;
-
-	while (temp) {
-		BookList* newTemp = new BookList;
-		newTemp->Book = temp->Book;
-		int index = temp->Book.returnYear() - minNum;
-		if (countArray[index] > 0) {
-			newTemp->Next = sortedList;
-			sortedList = newTemp;
-			countArray[index]--;
-		}
-		temp = temp->Next;
-	}
-	*head = sortedList;
-	delete[] countArray;
-
-}*/
-/*
-void BookList::CountingSort(BookList* head) {
-	if (head == nullptr || head->Next == nullptr) {
-		return; // Nothing to sort for an empty list or a list with one element
-	}
-
-	// Find the range of publication years
-	int minYear = head->Book.returnYear();
-	int maxYear = head->Book.returnYear();
-	BookList* current = head;
-
-	while (current) {
-		int year = current->Book.returnYear();
-		minYear = std::min(minYear, year);
-		maxYear = std::max(maxYear, year);
-		current = current->Next;
-	}
-
-	int range = maxYear - minYear + 1;
-
-	// Create an array to count occurrences of each year
-	int* countArray = new int[range] {0};
-
-	// Traverse the list and count occurrences of each year
-	current = head;
-	while (current) {
-		int year = current->Book.returnYear();
-		countArray[year - minYear]++;
-		current = current->Next;
-	}
-
-	// Reconstruct the sorted list using the count array
-	BookList* sortedList = nullptr;
-
-	for (int i = range - 1; i >= 0; i--) {
-		while (countArray[i] > 0) {
-			BookList* newNode = new BookList();
-			newNode->Book.setBookYear(i + minYear);
-			newNode->Next = sortedList;
-			sortedList = newNode;
-			countArray[i]--;
-		}
-	}
-
-	// Update the caller's head pointer
-	head = sortedList;
-
-	delete[] countArray;
 }
-
-BookList* BookList::FindMin(BookList* head) {
-	BookList* minValue = head;
-	
-}*/
 
 void BookList::CountingSort(BookList** head) {
 	if (!*head || !(*head)->Next) {
@@ -495,4 +383,20 @@ BookList* BookList::BubbleSort(BookList*head) {
 
 	}
 	return head;
+}
+
+bool BookList::BoolFind(BookList* head, Book1 book) {
+	bool index = false;
+	while (head) {
+		if (head->Book.returnName() == book.returnName()) {
+			index = true;
+			return index;
+		}
+		
+		else {
+			return index;
+		}
+
+		head = head->Next;
+	}
 }

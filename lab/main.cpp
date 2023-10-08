@@ -39,7 +39,7 @@ int main()
 	//int* counter = 0;
 	bool index;
 	Book1 service;
-	BookList* InsertionSortList();
+	//BookList* InsertionSortList();
 
 
 	while (true) {
