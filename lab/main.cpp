@@ -4,11 +4,24 @@
 #include "Book1.h"
 #include "Node.h"
 #include "BookList.h"
-#include "SeriesList.h"
-#include "Algorythm.h"
 #include "AuthorList.h"
 
 using namespace std;
+/*
+Головне: 
+
+7+1 клас
+
+Кількість функцій: 
+
+22 нетривілальні функції ()
+22 тривіальні функції
+
+2 ієрархії успадкування:
+
+Basic(abstract) ---> Book1 ---> Character1 , BookSeries10
+BookList ---> AuthorList
+*/
 
 Book1 createVarB() {
 	Book1 book;

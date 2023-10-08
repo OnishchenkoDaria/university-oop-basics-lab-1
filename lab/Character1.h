@@ -1,14 +1,12 @@
 #pragma once
 #include "Book1.h"
 #include "BookList.h"
-#include "SeriesList.h"
 #include <vector>
 #include <list>
 #include "BookSeries10.h"
 
 struct status{
 
-	//change into a bookList???????????
 	Book1 Book;
 	string matter;
 	status* Next;	
@@ -44,8 +42,5 @@ public:
 	void userCreateObj();
 
 	void setNameList();
-
-	void setStatusList();
-
 };
 

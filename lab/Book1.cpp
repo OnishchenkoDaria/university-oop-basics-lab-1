@@ -1,24 +1,5 @@
 #include "Book1.h"
 
-/*
-void Book1:: getInfo()
-{
-	//динамічний поліморфізм 
-	Basic::getInfo();
-
-	cout << "Author: " << Author << endl
-		<< "Number of Pages: " << Pages << endl
-		<< "Annotation: " << Annotation << endl;
-}
-
-void Book1::getName(){
-	Basic::getName();
-}
-
-string Book1::returnName() {
-	return Name;
-}*/
-
 bool num_check(string input) {
 	for (int i = 0; i < input.length(); i++) {
 		if (isdigit(input[i]) == false) {
